@@ -6,7 +6,7 @@ from collections import defaultdict
 @st.cache_data
 def load_words():
     try:
-        with open("words.txt", "r") as f:
+        with open("streamlit_chatbot/words.txt", "r") as f:
             return [word.strip().lower() for word in f if len(word.strip()) == 5 and word.strip().isalpha()]
     except FileNotFoundError:
         st.error("❌ 'words.txt' not found. Please add a file with one 5-letter word per line.")
